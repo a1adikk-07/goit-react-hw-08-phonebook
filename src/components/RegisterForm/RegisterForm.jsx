@@ -39,6 +39,8 @@ const RegisterForm = ({ onSubmit }) => {
 
   return (
     <form onSubmit={handleSubmit} className={styles.form}>
+      <h1 className={styles.title}>Please Sign Up</h1>
+
       <div className={styles.block}>
         <input
           value={name}

@@ -21,7 +21,6 @@ const RegisterPage = () => {
 
   return (
     <main>
-      <h1>Please Sign Up</h1>
       {authLoading && <p>One second...</p>}
       <RegisterForm onSubmit={handleSignup} />
       {authError && <p style={{ color: 'red' }}>{authError}</p>}
