@@ -36,30 +36,36 @@ const LoginForm = ({ onSubmit }) => {
   const { email, password } = state;
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className={styles.form}>
+      <h1 className={styles.title}>Login</h1>
+
       <div className={styles.block}>
-        <label htmlFor={emailId}>Email:</label>
         <input
+          className={styles.input}
           value={email}
           onChange={handleChange}
           type="email"
           name="email"
           id={emailId}
           required
+          placeholder="Email"
         />
       </div>
       <div className={styles.block}>
-        <label htmlFor={passwordId}>Password:</label>
         <input
+          className={styles.input}
           value={password}
           onChange={handleChange}
           type="password"
           name="password"
           id={passwordId}
           required
+          placeholder="Password"
         />
       </div>
-      <button type="submit">Login</button>
+      <button type="submit" className={styles.button}>
+        Login
+      </button>
     </form>
   );
 };

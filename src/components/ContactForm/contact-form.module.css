@@ -28,8 +28,8 @@
 .btn {
   border: none;
   margin-top: 5px;
-  color: rgb(8, 21, 43);
-  background-color: rgb(152, 194, 233);
+  color: #f1dcc9;
+  background-color: #9f4636;
   /* border: 1px solid #253094; */
   font-size: 26px;
   padding: 8px 20px;
@@ -39,7 +39,7 @@
 
 .btn:hover {
   color: aliceblue;
-  background-color: #899de8;
+  background-color: #b84e3c;
 }
 
 .btn:focus {
@@ -47,7 +47,7 @@
   margin-top: 7px;
   font-size: 24px;
   padding: 6px 16px;
-  background-color: #8fa0df;
+  background-color: #873a2c;
   box-shadow: 0 8px 6px rgba(0, 0, 0, 0.8);
   margin-left: 11px;
 }

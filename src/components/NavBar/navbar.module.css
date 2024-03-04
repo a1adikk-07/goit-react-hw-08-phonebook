@@ -1,6 +1,18 @@
 .navbar {
+  width: 100%;
+  background-color: #42313a;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 80px;
+  border-radius: 10px;
+}
+
+.logo {
+  color: #f1dcc9;
+  font-size: 42px;
+  text-decoration: none;
+  border-bottom: 6px solid #9f4636;
+  border-left: 3px solid #9f4636;
+  padding: 4px;
 }

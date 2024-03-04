@@ -38,19 +38,19 @@ const RegisterForm = ({ onSubmit }) => {
   const { name, email, password } = state;
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className={styles.form}>
       <div className={styles.block}>
-        <label htmlFor={nameId}>Name:</label>
         <input
           value={name}
           onChange={handleChange}
           name="name"
           id={nameId}
           required
+          placeholder="Name"
+          className={styles.input}
         />
       </div>
       <div className={styles.block}>
-        <label htmlFor={emailId}>Email:</label>
         <input
           value={email}
           onChange={handleChange}
@@ -58,10 +58,11 @@ const RegisterForm = ({ onSubmit }) => {
           name="email"
           id={emailId}
           required
+          placeholder="Email"
+          className={styles.input}
         />
       </div>
       <div className={styles.block}>
-        <label htmlFor={passwordId}>Password:</label>
         <input
           value={password}
           onChange={handleChange}
@@ -69,9 +70,13 @@ const RegisterForm = ({ onSubmit }) => {
           name="password"
           id={passwordId}
           required
+          placeholder="Password"
+          className={styles.input}
         />
       </div>
-      <button type="submit">Join</button>
+      <button type="submit" className={styles.button}>
+        Join
+      </button>
     </form>
   );
 };

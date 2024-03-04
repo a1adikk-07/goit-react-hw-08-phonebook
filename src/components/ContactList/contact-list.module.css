@@ -1,6 +1,6 @@
 body {
   display: block;
-  background: #c6d2ff;
+  background: #f1dcc9;
   padding: 10px 40px;
 }
 
@@ -10,6 +10,7 @@ body {
 }
 
 .contact {
+  width: 449px;
   display: flex;
   position: relative;
   padding: 4px;
@@ -22,10 +23,6 @@ body {
 .loading {
   margin-top: 16px;
 }
-
-/* .contacts {
-  width: 760px;
-} */
 
 .delete {
   color: #020071;

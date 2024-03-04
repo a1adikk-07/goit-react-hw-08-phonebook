@@ -14,7 +14,9 @@ const Navbar = () => {
   // const isLogin = false;
   return (
     <div className={styles.navbar}>
-      <Link to="/">Logo</Link>
+      <Link to="/" className={styles.logo}>
+        Phonebook
+      </Link>
       <NavbarMenu />
       {isLogin ? <NavbarUser /> : <NavbarAuth />}
     </div>
