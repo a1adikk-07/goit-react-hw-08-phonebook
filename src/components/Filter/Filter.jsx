@@ -4,6 +4,7 @@ const Filter = ({ changeFilter }) => {
   return (
     <div className={styles.filter}>
       <input
+        className={styles.input}
         onChange={changeFilter}
         id="filterID"
         name="filter"

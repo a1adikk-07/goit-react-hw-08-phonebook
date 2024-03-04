@@ -1,6 +1,6 @@
 .form {
   display: block;
-  width: 250px;
+  width: 380px;
   position: sticky;
   top: 0px;
 }
@@ -15,7 +15,7 @@
   padding: 8px 16px;
   background: none;
   width: 331px;
-  margin-top: 8px;
+  margin-bottom: 12px;
   box-shadow: 0 12px 10px rgba(0, 0, 0, 0.5);
 }
 
@@ -26,7 +26,6 @@
 }
 
 .btn {
-  margin-left: 8px;
   border: none;
   margin-top: 5px;
   color: rgb(8, 21, 43);

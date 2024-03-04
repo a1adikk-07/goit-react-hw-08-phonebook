@@ -35,31 +35,29 @@ const ContactForm = ({ onSubmit }) => {
   const { name, number } = state;
   return (
     <form onSubmit={handleSubmit} className={styles.form}>
-      <div className={styles.phonebook}>
-        <input
-          className={styles.input}
-          value={name}
-          type="text"
-          name="name"
-          onChange={handleChange}
-          id={phoneBookID}
-          placeholder="name"
-          required
-        ></input>
-        <input
-          className={styles.input}
-          value={number}
-          type="tel"
-          name="number"
-          onChange={handleChange}
-          id={phoneNumberID}
-          placeholder="phone number"
-          required
-        ></input>
-        <button className={styles.btn} type="submit">
-          Add contact
-        </button>
-      </div>
+      <input
+        className={styles.input}
+        value={name}
+        type="text"
+        name="name"
+        onChange={handleChange}
+        id={phoneBookID}
+        placeholder="name"
+        required
+      ></input>
+      <input
+        className={styles.input}
+        value={number}
+        type="tel"
+        name="number"
+        onChange={handleChange}
+        id={phoneNumberID}
+        placeholder="phone number"
+        required
+      ></input>
+      <button className={styles.btn} type="submit">
+        Add contact
+      </button>
     </form>
   );
 };

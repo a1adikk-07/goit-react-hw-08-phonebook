@@ -13,11 +13,11 @@ const Navbar = () => {
   const isLogin = useSelector(selectIsLogin);
   // const isLogin = false;
   return (
-    <dir className={styles.navbar}>
+    <div className={styles.navbar}>
       <Link to="/">Logo</Link>
       <NavbarMenu />
       {isLogin ? <NavbarUser /> : <NavbarAuth />}
-    </dir>
+    </div>
   );
 };
 

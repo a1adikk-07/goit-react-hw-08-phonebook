@@ -41,15 +41,19 @@ const App = () => {
 
   return (
     <div className={styles.wrapper}>
-      <h1>Phonebook</h1>
-      <ContactForm onSubmit={onAddContact} />
-      <h2>Contacts</h2>
-      <Filter changeFilter={changeFilter} />
-      {isLoading && <p>One second...</p>}
-      {error && <p>{error} </p>}
-      {Boolean(items.length) && (
-        <ContactList items={items} deleteContact={onDeleteContact} />
-      )}
+      <div>
+        <h1>Phonebook</h1>
+        <ContactForm onSubmit={onAddContact} />
+      </div>
+      <div>
+        <h1>Contacts</h1>
+        <Filter changeFilter={changeFilter} />
+        {isLoading && <p>One second...</p>}
+        {error && <p>{error} </p>}
+        {Boolean(items.length) && (
+          <ContactList items={items} deleteContact={onDeleteContact} />
+        )}
+      </div>
     </div>
   );
 };

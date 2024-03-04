@@ -9,11 +9,10 @@
 }
 
 .input {
-  font-size: 30px;
-  padding: 7px 16px;
-  width: 384px;
-  margin-top: 8px;
-  background: #fff;
-  margin-left: 6px;
+  background: #ffffff;
+  font-size: 28px;
+  padding: 8px 16px;
+  width: 331px;
+  margin-bottom: 12px;
   box-shadow: 0 12px 10px rgba(0, 0, 0, 0.5);
 }
