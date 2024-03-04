@@ -1,0 +1,22 @@
+body {
+  background-color: #f1dcc9;
+}
+
+.div {
+  width: 600px;
+  margin: auto;
+  text-align: center;
+}
+
+.emoji {
+  font-size: 80px;
+  margin-bottom: 10px;
+}
+
+.title {
+  font-size: 60px;
+}
+
+.link {
+  font-size: 40px;
+}
