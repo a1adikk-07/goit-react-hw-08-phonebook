@@ -1,72 +1,67 @@
-import { useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-// import toast from 'react-hot-toast';
-import { postContact } from '../../redux/operations';
-import { selectContacts } from '../../redux/selectors';
+import { useState, useMemo, memo, useCallback } from 'react';
+import { nanoid } from 'nanoid';
+
 import styles from './contact-form.module.css';
+
 const INITIAL_STATE = {
   name: '',
-  phone: '',
+  number: '',
 };
+// number instead of phone
+const ContactForm = ({ onSubmit }) => {
+  const [state, setState] = useState({ ...INITIAL_STATE });
 
-const ContactForm = () => {
-  const [state, setState] = useState(INITIAL_STATE);
-  const contacts = useSelector(selectContacts);
+  const handleChange = useCallback(({ target }) => {
+    const { name, value } = target;
 
-  const dispatch = useDispatch();
-
-  const handelChange = evt => {
-    const { name, value } = evt.target;
     setState(prevState => ({ ...prevState, [name]: value }));
-  };
+  }, []);
 
-  const handelFormSubmit = evt => {
+  const handleSubmit = evt => {
     evt.preventDefault();
-    const { name, phone } = state;
-    const isDublicated = contacts.find(
-      contact => contact.name.toLowerCase() === name.toLowerCase()
-    );
-    if (isDublicated) {
-      alert(`${name} is already in contacts.`);
-      return;
-    }
-    dispatch(postContact({ name, phone }));
+
+    onSubmit({ ...state });
+
     reset();
   };
 
-  const reset = () => {
-    setState(INITIAL_STATE);
-  };
+  const reset = useCallback(() => {
+    setState({ ...INITIAL_STATE });
+  }, []);
 
+  const phoneBookID = useMemo(() => nanoid(), []);
+  const phoneNumberID = useMemo(() => nanoid(), []);
+
+  const { name, number } = state;
   return (
-    <form onSubmit={handelFormSubmit} className={styles.form}>
-      <label className={styles.label}>
+    <form onSubmit={handleSubmit} className={styles.form}>
+      <div className={styles.phonebook}>
         <input
-          placeholder="Name"
           className={styles.input}
+          value={name}
           type="text"
           name="name"
-          value={state.name}
+          onChange={handleChange}
+          id={phoneBookID}
+          placeholder="name"
           required
-          onChange={handelChange}
-        />
-      </label>
-      <label className={styles.label}>
+        ></input>
         <input
-          placeholder="Phone"
           className={styles.input}
+          value={number}
           type="tel"
-          name="phone"
-          value={state.phone}
+          name="number"
+          onChange={handleChange}
+          id={phoneNumberID}
+          placeholder="phone number"
           required
-          onChange={handelChange}
-        />
-      </label>
-      <button className={styles.btn} type="submit">
-        Add contact
-      </button>
+        ></input>
+        <button className={styles.btn} type="submit">
+          Add contact
+        </button>
+      </div>
     </form>
   );
 };
 
-export default ContactForm;
+export default memo(ContactForm);
